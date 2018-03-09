@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eclipse Theme Editor</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" media="screen" type="text/css"
+	href="css/colorpicker.css" />
+<link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css">
+
+<style id="selectColor">
+</style>
+</head>
+<body>
+	<form id="bar" action="">
+		<input type="button" value="Immersive Mode" onclick="immersiveMode(this)" class="immersiveMode"/>
+		<label for="loadFile">Load existing theme from XML : </label>
+		<input id="loadFile" type="file" oninput="loadXMLFile(this)" />
+		<input autocomplete="name" type="text" required="required"
+			placeholder="Author" />
+		<input type="text" required="required" placeholder="Theme Name" />
+		<input value="Save" type="button" onclick="save()" />
+		<input value="Download" type="button" onclick="download()" />
+	</form>
+	<article class="main">
+		<section id="colors"></section>
+		<section id="preview">
+				<pre class="background foreground allPreview">
+<span class="lineNumber allPreview"> 1 </span><span class="multiLineComment allPreview">/* This is sample C++ code */</span>
+<span class="lineNumber allPreview"> 2 </span>#include &ltcstdio&gt
+<span class="lineNumber allPreview"> 3 </span>#define MACRO(x) x
+<span class="lineNumber allPreview"> 4 </span>using namespace std;
+<span class="lineNumber allPreview"> 5 </span><span class="singleLineComment allPreview">// This comment may span only this line</span>
+<span class="lineNumber allPreview"> 6 </span>typedef unsigned int uint;
+<span class="lineNumber allPreview"> 7 </span>int static myfunc(uint parameter) {
+<span class="lineNumber allPreview"> 8 </span>  if (parameter == 0) fprintf(stdout, "zero\n");
+<span class="lineNumber allPreview"> 9 </span>  cout &lt&lt "hello\n";
+<span class="lineNumber allPreview">10 </span>  return parameter - 1;
+<span class="lineNumber allPreview">11 </span><div class="currentLine allPreview">}<span class="cursor">|</span></div>
+<span class="lineNumber allPreview">12 </span>void mutator(int&);
+<span class="lineNumber allPreview">13</span> template &lttypename Item&gt
+<span class="lineNumber allPreview">14</span> class MyClass {
+<span class="lineNumber allPreview">15</span> public:
+<span class="lineNumber allPreview">16</span>  enum Number { ZERO, ONE, TWO };
+<span class="lineNumber allPreview">17</span>  static char staticField;
+<span class="lineNumber allPreview">18</span>  int field;
+<span class="lineNumber allPreview">19</span>  virtual Number vmethod() const;
+<span class="lineNumber allPreview">20</span>  void method(Number n) const {
+<span class="lineNumber allPreview">21</span>    int local= (int)MACRO('\0');
+<span class="lineNumber allPreview">22</span> label: myfunc(local);
+<span class="lineNumber allPreview">23</span>    vmethod();
+<span class="lineNumber allPreview">24</span>    staticMethod();
+<span class="lineNumber allPreview">25</span>    problem();  // TODO: fix
+<span class="lineNumber allPreview">26</span>    mutator(local);
+<span class="lineNumber allPreview">27</span>  }
+<span class="lineNumber allPreview">28</span>  static void staticMethod();
+<span class="lineNumber allPreview">29</span> };
+<span class="lineNumber allPreview">30</span>
+			</pre>
+		</section>
+	</article>
+	<script src="jquery.min.js"></script>
+	<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/colorpicker.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="database.js"></script>
+</body>
+</html>

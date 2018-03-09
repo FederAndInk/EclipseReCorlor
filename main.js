@@ -79,18 +79,19 @@ function setColorPickers() {
 		},
 		onChange : function(hsb, hex, rgb, colpkr) {
 			colorBox.css('backgroundColor', '#' + hex);
-			color(colorBox, hex);
+			setBoxColor(colorBox, hex);
 		},
 		color : "#ffffff"
 	});
-	var foregrd = $(".colorDesc:contains('foreground')").next();
-	var backgrd = $(".colorDesc:contains('background')").next();
-	foregrd.ColorPickerSetColor("#ebebeb");
-	backgrd.ColorPickerSetColor("#363636");
-	foregrd.css('backgroundColor', '#ebebeb');
-	backgrd.css('backgroundColor', '#363636');
-	color(foregrd, "ebebeb");
-	color(backgrd, "363636");
+	setColorFor("foreground", "#ebebeb");
+	setColorFor("background", "#363636");
+}
+
+function setColorFor(opt, color) {
+	var box = $(".colorDesc:contains('" + opt + "')").next();
+	box.ColorPickerSetColor(color);
+	box.css('backgroundColor', color);
+	setBoxColor(box, color);
 }
 
 function getColorFor(param) {
@@ -98,7 +99,7 @@ function getColorFor(param) {
 	return color.css("backgroundColor");
 }
 
-function color(colorBox, hex) {
+function setBoxColor(colorBox, hex) {
 	var e = colorBox.prev().html();
 	e = e.substr(0, e.length - 2);
 
@@ -152,7 +153,7 @@ function immersiveMode(btn) {
 
 function initColors() {
 	$(".colorBox").each(function(i, element) {
-		color($(this), $(this).css("backgroundColor"));
+		setBoxColor($(this), $(this).css("backgroundColor"));
 	})
 }
 

@@ -122,8 +122,8 @@ function color(colorBox, hex) {
 }
 
 function selectionColor() {
-	var foreground = getColorFor("foreground");
-	var background = getColorFor("background");
+	var foreground = getColorFor("selectionForeground");
+	var background = getColorFor("selectionBackground");
 
 	document.getElementById("selectColor").innerHTML = ".allPreview::selection{\
 				color: " + foreground + ";\
